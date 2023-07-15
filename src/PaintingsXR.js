@@ -40,51 +40,13 @@ const PaintingsXR= () => {
       
  
    <Box sx={{  height: "100vh", width: "100%"}}>
-    <ARButton/>
-        <Canvas
-          shadows
-          gl={{ antialias: true, toneMapping: THREE.NoToneMapping }}
-          linear
-          backgr
-          id='three-canvas-container'
-          style={{ background: "black" }}
-        >
-
+   <ARButton />
+      <Canvas>
         <XR>
-             <color attach="background" args={['#111']} />
-             <ambientLight intensity={1} />
-       <Effects disableGamma>
-        {/* threshhold has to be 1, so nothing at all gets bloom by default */}
-        <unrealBloomPass threshold={1} strength={intensity} radius={radius} />
-        <outputPass args={[THREE.ACESFilmicToneMapping]} />
-      </Effects>
-
-
-          <OrbitControls
-           minAzimuthAngle={-Infinity }
-           maxAzimuthAngle={Infinity  }
-             
-            minPolarAngle={-Infinity}
-            maxPolarAngle={Infinity}
-            enablePan={true}
-            enableZoom={true}
-          />
-
-         
-       
-         
-          <Models/>
-          
-         
-         
-          <directionalLight
-            position={[20, 40, -5]}
-            intensity={0.5}
-            castShadow
-          />
-
-</XR> 
-        </Canvas>
+          <Cube />
+        </XR>
+      </Canvas>
+        
         
       </Box>  
 

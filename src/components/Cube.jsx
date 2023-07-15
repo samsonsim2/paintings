@@ -1,24 +1,24 @@
+import { OrbitControls } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
-import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-import { useTexture } from "@react-three/drei"
-export function Cube(  ) {
+export const Cube = () => {
+  const cubeRef = useRef();
 
-    const props = useTexture({
-        map: 'diffuse.png'
-        
-      })
-  const { nodes, materials } = useGLTF("/Cube.gltf");
+  useFrame((state, delta) => {
+    cubeRef.current.rotation.y += delta;
+  });
+
   return (
-    <group {...props} dispose={null} scale={0.01}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube.geometry}
-       
-       ><meshStandardMaterial  {...props}/></mesh>
-    </group>
+    <>
+      <OrbitControls />
+      <ambientLight />
+      <mesh ref={cubeRef} position-z={-5}>
+        <boxGeometry args={[2, 2, 2]} />
+        <meshStandardMaterial color={"mediumpurple"} />
+      </mesh>
+    </>
   );
-}
+};
 
-useGLTF.preload("/Cube.gltf");
+ 
