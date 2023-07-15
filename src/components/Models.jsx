@@ -47,7 +47,7 @@ export function Models( props) {
     myMesh.current.rotation.y = clock.getElapsedTime()/5
   })
   return (
-    <group ref={myMesh} {...props} dispose={null} scale={1} position={[0,0,0]}>
+    <group ref={myMesh} {...props} dispose={null} scale={1} position={[0,0,-5]}>
       <mesh
         castShadow
         receiveShadow
