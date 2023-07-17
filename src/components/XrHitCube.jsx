@@ -3,6 +3,7 @@ import { useThree } from "@react-three/fiber";
 import { Interactive, useHitTest, useXR } from "@react-three/xr";
 import { useRef, useState } from "react";
 import Cube from "./Cube";
+import { Models } from "./Models";
  
 const XrHitCube = () => {
   const reticleRef = useRef();
@@ -43,13 +44,12 @@ const XrHitCube = () => {
       {isPresenting && (
         <Interactive onSelect={placeCube}>
           <mesh ref={reticleRef} rotation-x={-Math.PI / 2}>
-            <ringGeometry args={[0.1, 0.25, 32]} />
-            <meshStandardMaterial color={"white"} />
+           <Models/>
           </mesh>
         </Interactive>
       )}
 
-      {!isPresenting && <Cube />}
+      {!isPresenting && <Models/>}
     </>
   );
 };
