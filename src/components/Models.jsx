@@ -6,6 +6,9 @@ import { DoubleSide } from "three";
 import { useFrame } from "@react-three/fiber";
 
 export function Models( props) {
+
+  const reticleRef = useRef( );
+
   const { nodes, materials } = useGLTF("/Untitled_2.glb");
   const hyperGridDiffuseMap = useTexture(
     '/Brush_HyperGrid_MainTex.png'
@@ -43,11 +46,12 @@ export function Models( props) {
 
 
   const myMesh = React.useRef()
-  useFrame(({ clock }) => {
-    myMesh.current.rotation.y = clock.getElapsedTime()/5
-  })
+  // useFrame(({ clock }) => {
+  //   myMesh.current.rotation.y = clock.getElapsedTime()/5
+  // })
   return (
-    <group ref={myMesh} {...props} dispose={null} scale={1} position={[0,0,-5]}>
+    <group    {...props} dispose={null} scale={1} position={[0,0,-5]}>
+      <mesh ref={reticleRef}  rotation-x={-Math.PI / 2} >
       <mesh
         castShadow
         receiveShadow
@@ -115,6 +119,7 @@ export function Models( props) {
         geometry={nodes.brush_Light_g0_b0.geometry}
          
        ><meshPhongMaterial map={lightMaterial} transparent={true}/></mesh>
+    </mesh>
     </group>
   );
 }

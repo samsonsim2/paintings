@@ -18,12 +18,13 @@ import * as THREE from 'three'
 import { Suspense, useState, useRef } from 'react'
  
  
-import { Cube } from './components/Cube';
+ 
 import { Box } from '@mui/material';
 import { Models } from './components/Models';
  
 import { useControls } from 'leva'
 import { ARButton, XR } from '@react-three/xr';
+import Cube from './components/Cube';
  
 
  
@@ -40,7 +41,9 @@ const PaintingsXR= () => {
       
  
    <Box sx={{  height: "100vh", width: "100%"}}>
-   <ARButton />
+   <ARButton  sessionInit={{
+          requiredFeatures: ["hit-test"],
+        }}/>
       <Canvas>
         <XR>
           <Cube />

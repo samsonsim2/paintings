@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Paintings from './Paintings';
 import PaintingsXR from './PaintingsXR';
+import XrHitCubeContainer from './XrHitCubeContainer';
  
  
  
@@ -14,7 +15,7 @@ const App = () => {
   
    <Routes>
       <Route path="/" element={<Paintings/>}/>
-      <Route path="/xr" element={<PaintingsXR/>}/>
+      <Route path="/xr" element={<XrHitCubeContainer/>}/>
  
        
   </Routes>  
