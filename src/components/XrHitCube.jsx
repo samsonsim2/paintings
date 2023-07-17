@@ -39,7 +39,7 @@ const XrHitCube = () => {
       <ambientLight />
       {isPresenting &&
         cubes.map(({ position, id }) => {
-          return <Cube key={id} position={position} />;
+          return <Models key={id} position={position} />;
         })}
       {isPresenting && (
         <Interactive onSelect={placeCube}>
