@@ -2,9 +2,8 @@ import { OrbitControls } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { Interactive, useHitTest, useXR } from "@react-three/xr";
 import { useRef, useState } from "react";
-import Cube from "./Cube";
-import { Models } from "./Models";
- 
+import Cube from "./Cube2";
+
 const XrHitCube = () => {
   const reticleRef = useRef();
   const [cubes, setCubes] = useState([]);
@@ -39,17 +38,18 @@ const XrHitCube = () => {
       <ambientLight />
       {isPresenting &&
         cubes.map(({ position, id }) => {
-          return <Models key={id} position={position} />;
+          return <Cube key={id} position={position} />;
         })}
       {isPresenting && (
         <Interactive onSelect={placeCube}>
           <mesh ref={reticleRef} rotation-x={-Math.PI / 2}>
-           <Models/>
+            <ringGeometry args={[0.1, 0.25, 32]} />
+            <meshStandardMaterial color={"white"} />
           </mesh>
         </Interactive>
       )}
 
-      {!isPresenting && <Models/>}
+      {!isPresenting && <Cube />}
     </>
   );
 };

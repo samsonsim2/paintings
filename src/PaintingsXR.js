@@ -24,7 +24,7 @@ import { Models } from './components/Models';
  
 import { useControls } from 'leva'
 import { ARButton, XR } from '@react-three/xr';
-import Cube from './components/Cube';
+import Cube from './components/Cube2';
  
 
  

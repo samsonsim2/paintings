@@ -18,7 +18,7 @@ import * as THREE from 'three'
 import { Suspense, useState, useRef } from 'react'
  
  
-import { Cube } from './components/Cube';
+import { Cube } from './components/Cube2';
 import { Box } from '@mui/material';
 import { Models } from './components/Models';
  
