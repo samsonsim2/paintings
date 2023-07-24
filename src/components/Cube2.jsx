@@ -2,7 +2,7 @@ import { OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
-const Cube = ({ position }) => {
+const Cube2 = ({ position }) => {
   const cubeRef = useRef();
 
   useFrame((state, delta) => {
@@ -19,4 +19,4 @@ const Cube = ({ position }) => {
   );
 };
 
-export default Cube;
+export default Cube2;

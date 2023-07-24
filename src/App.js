@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Paintings from './Paintings';
 import PaintingsXR from './PaintingsXR';
 import XrHitCubeContainer from './XrHitCubeContainer';
+import Galaxy from './Galaxy';
  
  
  
@@ -14,7 +15,8 @@ const App = () => {
   <BrowserRouter>
   
    <Routes>
-      <Route path="/" element={<Paintings/>}/>
+      {/* <Route path="/" element={<Paintings/>}/> */}
+      <Route path="/" element={<Galaxy/>}/>
       <Route path="/xr" element={<XrHitCubeContainer/>}/>
  
        

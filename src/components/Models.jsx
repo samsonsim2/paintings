@@ -8,6 +8,7 @@ import { useFrame } from "@react-three/fiber";
 export function Models( props) {
 
   const reticleRef = useRef( );
+  
 
   const { nodes, materials } = useGLTF("/Untitled_2.glb");
   const hyperGridDiffuseMap = useTexture(
@@ -46,12 +47,12 @@ export function Models( props) {
 
 
   const myMesh = React.useRef()
-  // useFrame(({ clock }) => {
-  //   myMesh.current.rotation.y = clock.getElapsedTime()/5
-  // })
+  useFrame(({ clock }) => {
+    myMesh.current.rotation.y = clock.getElapsedTime()/5
+  })
   return (
-    <group    {...props} dispose={null} scale={1} position={[0,0,-5]}>
-      <mesh ref={reticleRef}  rotation-x={-Math.PI / 2} >
+    <group  ref={myMesh}   {...props} dispose={null} scale={1} position={[0,1.5,0]}>
+      <mesh ref={reticleRef}    >
       <mesh
         castShadow
         receiveShadow
