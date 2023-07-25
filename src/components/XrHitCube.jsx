@@ -29,7 +29,7 @@ const XrHitCube = () => {
   const placeCube = (e) => {
     let position = e.intersection.object.position.clone();
     let id = Date.now();
-    setCubes([...cubes, { position, id }]);
+    setCubes([{ position, id }]);
   };
 
   return (
