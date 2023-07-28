@@ -37,7 +37,7 @@ export function LightBase(props) {
           vec3 color = vec3(1.0, 1.0, 0.5);
         
           float fresnel = Fresnel(v_eye, normalize(v_normal));
-          float a = pow(fresnel * 0.1, 1.2);  
+          float a = pow(fresnel * 0.3, 1.2);  
           color *= fresnel;
         
           gl_FragColor = vec4(color, a );

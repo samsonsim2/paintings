@@ -102,7 +102,7 @@ export default function App() {
       vec3 color = vec3(1.0, 1.0, 0.5);
     
       float fresnel = Fresnel(v_eye, normalize(v_normal));
-      float a = pow(fresnel * 1, 1.2);
+      float a = pow(fresnel * 0.1, 1.2);
       color *= fresnel;
     
       gl_FragColor = vec4(color,a );
@@ -151,7 +151,7 @@ export default function App() {
              <ambientLight intensity={0.5} />
              <EffectComposer disableGamma>
               
-          <Bloom kernelSize={KernelSize.HUGE} luminanceThreshold={0} luminanceSmoothing={0} intensity={1} />
+          <Bloom kernelSize={KernelSize.HUGE} luminanceThreshold={1} luminanceSmoothing={0} intensity={1} />
       </EffectComposer>
       
        {/* <Base/> */}
@@ -180,8 +180,8 @@ export default function App() {
           />
           <Models/>
 
-          {/* <Sparkles count={800} scale={20} size={0.5} speed={0.1} /> */}
-          <Sparkles count={50 } scale={5} size={1} speed={0.4} />
+          <Sparkles count={800} scale={20} size={0.5} speed={0.1} />
+          <Sparkles count={90 } scale={5} size={1} speed={0.4}   />
      
         
 
