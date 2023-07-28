@@ -28,7 +28,7 @@ const sizes = {
 };
 
 
-function BufferPoints({ count = 4000 }) {
+function BufferPoints({ count = 2000 }) {
 
 
     
@@ -164,8 +164,8 @@ export default function App() {
         ref={cameraRef}
         makeDefault={true}
         zoom={100}
-        far={100000}
-        near={-100000}
+        far={20}
+        near={0}
         up={[0, 1.5, 0]}
         position={[0,10, 12]}
          
@@ -180,7 +180,8 @@ export default function App() {
           />
           <Models/>
 
-          <Sparkles count={100} scale={5} size={1} speed={0.4} />
+          {/* <Sparkles count={800} scale={20} size={0.5} speed={0.1} /> */}
+          <Sparkles count={50 } scale={5} size={1} speed={0.4} />
      
         
 
@@ -191,7 +192,7 @@ export default function App() {
         
         <meshPhongMaterial   emissive={"yellow"}  emissiveIntensity={1} color={"#6AFF00"}      transparent={true}/>
       </mesh>
-
+      <Beads/>
       
       <mesh  scale={0.3} side={DoubleSide} >
         <sphereGeometry  >
