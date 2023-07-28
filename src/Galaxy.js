@@ -169,7 +169,7 @@ export default function App() {
         up={[0, 1.5, 0]}
         position={[0,10, 12]}
          
-        scale={1.2}
+        scale={1.6}
       />
     
       {/* <ambientLight intensity={0.2} /> */}
