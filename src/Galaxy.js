@@ -11,6 +11,7 @@ import { Models } from "./components/Models";
 import { Beads } from "./components/Beads";
 import { extend } from '@react-three/fiber'
 import { Effects } from '@react-three/drei'
+
 import { UnrealBloomPass } from 'three-stdlib'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass'
 import { Color, AdditiveBlending } from 'three'
@@ -21,6 +22,8 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { DoubleSide } from "three";
 import { useControls } from 'leva'
 import { LightBase } from "./components/LightBase";
+import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
+import { BlurPass, Resizer, KernelSize, Resolution } from 'postprocessing'
 extend({ UnrealBloomPass, OutputPass })
 const sizes = {
   width: window.innerWidth,
@@ -69,9 +72,7 @@ export default function App() {
 
   const cameraRef = useRef(null)
 
-  useEffect(()=>{
-    console.log(cameraRef)
-  },[])
+  
 
   const ColorShiftMaterial = shaderMaterial(
     { time: 0, color: new THREE.Color(0.2, 0.0, 0.1) },
@@ -101,7 +102,7 @@ export default function App() {
       vec3 color = vec3(1.0, 1.0, 0.5);
     
       float fresnel = Fresnel(v_eye, normalize(v_normal));
-      float a = pow(fresnel * 0.1, 1.2);
+      float a = pow(fresnel * 1, 1.2);
       color *= fresnel;
     
       gl_FragColor = vec4(color,a );
@@ -148,11 +149,10 @@ export default function App() {
         >
              <color attach="background" args={['#111']} />
              <ambientLight intensity={0.5} />
-       <Effects disableGamma>
-        {/* threshhold has to be 1, so nothing at all gets bloom by default */}
-        <unrealBloomPass threshold={1} strength={intensity} radius={radius} />
-        <outputPass args={[THREE.ACESFilmicToneMapping]} />
-      </Effects>
+             <EffectComposer disableGamma>
+              
+          <Bloom kernelSize={KernelSize.HUGE} luminanceThreshold={0} luminanceSmoothing={0} intensity={1} />
+      </EffectComposer>
       
        {/* <Base/> */}
         
@@ -190,7 +190,7 @@ export default function App() {
       
         </sphereGeometry>
         
-        <meshPhongMaterial   emissive={"yellow"}  emissiveIntensity={1} color={"#6AFF00"}      transparent={true}/>
+        <meshPhongMaterial   emissive={"yellow"}  emissiveIntensity={1} color={"white"}      transparent={true}/>
       </mesh>
       <Beads/>
       
@@ -198,8 +198,8 @@ export default function App() {
         <sphereGeometry  >
       
         </sphereGeometry>
-        <colorShiftMaterial transparent   side={DoubleSide}/>
-         
+        <colorShiftMaterial    transparent   side={DoubleSide}/>
+        
       </mesh>
 
       <LightBase/>
