@@ -179,8 +179,8 @@ export default function App() {
             castShadow
           />
           <Models/>
-
-          <Sparkles count={800} scale={20} size={0.5} speed={0.1} />
+{/* 
+          <Sparkles count={800} scale={20} size={0.5} speed={0.1} /> */}
           <Sparkles count={90 } scale={5} size={1} speed={0.4}   />
      
         
