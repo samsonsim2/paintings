@@ -1,5 +1,5 @@
 import "./styles.css";
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {  OrbitControls, OrthographicCamera, Sparkles, SpotLight, shaderMaterial, useDepthBuffer, useGLTF, useTexture } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box, Button, Typography } from "@mui/material";
@@ -11,7 +11,7 @@ import { Models } from "./components/Models";
 import { Beads } from "./components/Beads";
 import { extend } from '@react-three/fiber'
 import { Effects } from '@react-three/drei'
-
+ 
 import { UnrealBloomPass } from 'three-stdlib'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass'
 import { Color, AdditiveBlending } from 'three'
@@ -24,6 +24,7 @@ import { useControls } from 'leva'
 import { LightBase } from "./components/LightBase";
 import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
 import { BlurPass, Resizer, KernelSize, Resolution } from 'postprocessing'
+import ModelSelector from "./components/ModelSelector";
 extend({ UnrealBloomPass, OutputPass })
 const sizes = {
   width: window.innerWidth,
@@ -127,14 +128,50 @@ export default function App() {
         radius: { value: 0, min: 0, max: 1, step: 0.01 }
       })
 
-    
+    const [modelIndex,setModelIndex]= useState(1)
+
+    const increment=()=>{
+       
+      if(modelIndex < 9){
+      setModelIndex(modelIndex +1 )
+      }
+      else{
+        setModelIndex(0)
+      }
+       
+ 
+  }
+  const decrement=()=>{
+       
+    if(modelIndex >0 ){
+    setModelIndex(modelIndex - 1 )
+    }
+    else{
+      setModelIndex(9)
+    }
+     
+
+}
+
+  // const decrement=()=>{
+  //     if (pageState == "buttons"){
+  //     if(count >0 ){
+  //     setCount(count-1)
+  //     setEmotions(emotionsArray[count-1])
+  //     }
+  //     else{
+  //         setCount(emotionsArray.length-1)
+  //         setEmotions(emotionsArray[emotionsArray.length-1])
+  //     }
+  // }
+  // }
   return (
     <>
       <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center"}}>
    <Box sx={{position:"absolute",bottom:"50%",display:"flex",justifyContent:"space-between" ,zIndex:"100",width:"100%",padding:"50px"}}>
 
-   <Button  sx={{height:"40px"}}><ArrowLeftIcon sx={{fontSize:"100px",color:"white"}}/></Button>
-    <Button   sx={{height:"40px"}}><ArrowRightIcon sx={{fontSize:"100px",color:"white"}} /></Button>
+   <Button  onClick={()=>{decrement()}} sx={{height:"40px"}}><ArrowLeftIcon sx={{fontSize:"100px",color:"white"}}/></Button>
+    <Button  onClick={()=>{increment()}} sx={{height:"40px"}}><ArrowRightIcon sx={{fontSize:"100px",color:"white"}} /></Button>
 
    </Box>
     
@@ -178,7 +215,8 @@ export default function App() {
             intensity={1}
             castShadow
           />
-          <Models/>
+          {/* <Models/> */}
+          <ModelSelector modelIndex={modelIndex}/>
 {/* 
           <Sparkles count={800} scale={20} size={0.5} speed={0.1} /> */}
           <Sparkles count={90 } scale={5} size={1} speed={0.4}   />
