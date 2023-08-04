@@ -1,8 +1,8 @@
 import "./styles.css";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import {  OrbitControls, OrthographicCamera, Sparkles, SpotLight, shaderMaterial, useDepthBuffer, useGLTF, useTexture } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import { BufferAttribute } from "three"
 import { Cone } from '@react-three/drei';
 import * as THREE from "three";
@@ -176,6 +176,7 @@ export default function App() {
    </Box>
     
    <Box sx={{  height: "100vh", width: "100%"}}>
+   <Suspense fallback={<CircularProgress/>}>
      <Canvas
           shadows
           gl={{ antialias: true, toneMapping: THREE.NoToneMapping }}
@@ -216,7 +217,9 @@ export default function App() {
             castShadow
           />
           {/* <Models/> */}
+       
           <ModelSelector modelIndex={modelIndex}/>
+         
 {/* 
           <Sparkles count={800} scale={20} size={0.5} speed={0.1} /> */}
           <Sparkles count={90 } scale={5} size={1} speed={0.4}   />
@@ -245,8 +248,9 @@ export default function App() {
       {/* <Cone   scale={2} rotation={[Math.PI/2,0,0]}>
       <colorShiftMaterial   transparent/>
       </Cone> */}
-      <OrbitControls />
+      <OrbitControls enablePan={true}/>
     </Canvas>
+    </Suspense>
     </Box>
     </Box>
     </>
