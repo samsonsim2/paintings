@@ -6,6 +6,7 @@ import PaintingsXR from './PaintingsXR';
 import XrHitCubeContainer from './XrHitCubeContainer';
 import Galaxy from './Galaxy';
 import { CircularProgress } from '@mui/material';
+import Loading from './components/Loading';
  
  
  
@@ -19,7 +20,7 @@ const App = () => {
       {/* <Route path="/" element={<Paintings/>}/> */}
 
       <Route path="/" element={<Galaxy/>}/>
-
+ 
       <Route path="/xr" element={<XrHitCubeContainer/>}/>
  
        

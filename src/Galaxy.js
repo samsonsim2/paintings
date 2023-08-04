@@ -11,7 +11,7 @@ import { Models } from "./components/Models";
 import { Beads } from "./components/Beads";
 import { extend } from '@react-three/fiber'
 import { Effects } from '@react-three/drei'
- 
+ import Loading from "./components/Loading";
 import { UnrealBloomPass } from 'three-stdlib'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass'
 import { Color, AdditiveBlending } from 'three'
@@ -176,7 +176,7 @@ export default function App() {
    </Box>
     
    <Box sx={{  height: "100vh", width: "100%"}}>
-   <Suspense fallback={<CircularProgress/>}>
+   <Suspense fallback={<Loading/>}>
      <Canvas
           shadows
           gl={{ antialias: true, toneMapping: THREE.NoToneMapping }}
