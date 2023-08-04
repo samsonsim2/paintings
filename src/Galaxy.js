@@ -123,10 +123,10 @@ export default function App() {
   }
   
   
-    const { intensity, radius } = useControls({
-        intensity: { value: 0.45, min: 0, max: 1.5, step: 0.01 },
-        radius: { value: 0, min: 0, max: 1, step: 0.01 }
-      })
+    // const { intensity, radius } = useControls({
+    //     intensity: { value: 0.45, min: 0, max: 1.5, step: 0.01 },
+    //     radius: { value: 0, min: 0, max: 1, step: 0.01 }
+    //   })
 
     const [modelIndex,setModelIndex]= useState(1)
 
