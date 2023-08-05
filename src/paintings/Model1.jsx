@@ -38,7 +38,7 @@ const { nodes, materials } = useGLTF("/Model1.glb");
         receiveShadow
         geometry={nodes.brush_HyperGrid_g0_b0.geometry}
         material={materials.brush_HyperGrid}
-      ><meshPhongMaterial   emissive={"#6AFF00"}  emissiveIntensity={1} color={"#6AFF00"}    map={brushHyperGridMap} transparent={true}/> </mesh>
+      ><meshPhongMaterial   emissive={"#6AFF00"}  emissiveIntensity={3} color={"#6AFF00"}    map={brushHyperGridMap} transparent={true}/> </mesh>
       <mesh
         castShadow
         receiveShadow

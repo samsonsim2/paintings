@@ -128,7 +128,7 @@ export default function App() {
     //     radius: { value: 0, min: 0, max: 1, step: 0.01 }
     //   })
 
-    const [modelIndex,setModelIndex]= useState(1)
+    const [modelIndex,setModelIndex]= useState(0)
 
     const increment=()=>{
        
