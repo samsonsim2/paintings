@@ -21,7 +21,7 @@ import { Model18 } from '../paintings/Model18'
 const ModelSelector = ({modelIndex}) => {
     const modelArray = [
     <Model1/>,<Model2/>,<Model3/>,<Model4/>,<Model5/>,<Model6/>,<Model7/>,<Model8/>,<Model9/>,<Model10/>,
-    <Model11/>,<Model12/>,<Model3/>,<Model14/>,<Model15/>,<Model16/>,<Model17/>,<Model18/>]
+    <Model11/>,<Model12/>,<Model13/>,<Model14/>,<Model15/>,<Model16/>,<Model17/>,<Model18/>]
   
   
   return (<>

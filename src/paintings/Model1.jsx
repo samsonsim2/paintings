@@ -23,6 +23,7 @@ const brushSoftHiglighterMap = useTexture(
 const brushStreamersMap = useTexture("/Textures/Brush_Streamers.png");
 const brushThickPaintMap = useTexture("/Textures/Brush_ThickPaint.png");
 const brushWigglyGraphiteMap = useTexture("/Textures/Brush_WigglyGraphite.png");
+const brushWaveFormMap = useTexture("/Textures/Brush_Waveform.png");
 const myMesh = React.useRef()
 useFrame(({ clock }) => {
   myMesh.current.rotation.y = clock.getElapsedTime()/5
