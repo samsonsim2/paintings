@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import { BufferAttribute } from "three"
 import { Cone } from '@react-three/drei';
+import html2canvas from 'html2canvas'
 import * as THREE from "three";
 import { Base } from "./components/Base";
 import { Models } from "./components/Models";
@@ -165,25 +166,63 @@ export default function App() {
   //     }
   // }
   // }
+
+  const downloadImage = () => {
+    
+    console.log("test")
+
+    
+    const screenshotTarget = document.getElementById('canvas')
+    // -- Use html2canvas to convert to base 64 image
+    html2canvas(screenshotTarget).then((canvas) => {
+      const link = document.createElement('a');
+      link.download = 'my-div-image.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    })
+    // html2canvas(divRef.current,{useCORS: true,
+    //   allowTaint: true,backgroundColor:null})
+    
+    //   .then(canvas => {
+    //     const link = document.createElement('a');
+    //     link.download = 'my-div-image.png';
+    //     link.href = canvas.toDataURL('image/png');
+    //     link.click();
+    //   });
+  };
+  const divRef = useRef(null); 
+ 
   return (
     <>
-      <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center"}}>
+    <Box sx={{ position:"relative",width:"100vw",height:"100vh"  }}>
+      <Box  sx={{position:"absolute",bottom:30, width:"100%", display:"flex",justifyContent:"center",zIndex:"10000000"  }}>
+    <Button  variant="contained" onClick={()=>{downloadImage()}}>donwload</Button>
+    </Box>
+      <Box  ref={divRef} sx={{width:"100vw",top:0,display:"flex",justifyContent:"center"}}>
+      
    <Box sx={{position:"absolute",bottom:"50%",display:"flex",justifyContent:"space-between" ,zIndex:"100",width:"100%",padding:"50px"}}>
-
+   
    <Button  onClick={()=>{decrement()}} sx={{height:"40px"}}><ArrowLeftIcon sx={{fontSize:"100px",color:"white"}}/></Button>
-    <Button  onClick={()=>{increment()}} sx={{height:"40px"}}><ArrowRightIcon sx={{fontSize:"100px",color:"white"}} /></Button>
+   
+   <Button  onClick={()=>{increment()}} sx={{height:"40px"}}><ArrowRightIcon sx={{fontSize:"100px",color:"white"}} /></Button>
 
    </Box>
+
+   
+   
     
-   <Box sx={{  height: "100vh", width: "100%"}}>
+    
+   <Box id="canvas" sx={{  height: "100vh", width: "100%"}}>
+    
    <Suspense fallback={<Loading/>}>
      <Canvas
           shadows
-          gl={{ antialias: true, toneMapping: THREE.NoToneMapping }}
+          gl={{ antialias: true, toneMapping: THREE.NoToneMapping,preserveDrawingBuffer: true }}
           linear
           backgr
           id='three-canvas-container'
           style={{ background: "black" }}
+       
         >
              <color attach="background" args={['#111']} />
              <ambientLight intensity={0.5} />
@@ -251,6 +290,7 @@ export default function App() {
       <OrbitControls enablePan={true}/>
     </Canvas>
     </Suspense>
+    </Box>
     </Box>
     </Box>
     </>
