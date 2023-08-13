@@ -39,7 +39,7 @@ export function Model19(props) {
 
  
   return (
-    <group ref={myMesh} {...props} dispose={null} scale={2} position={[-1,1,0]}>
+    <group ref={myMesh} {...props} dispose={null} scale={2} position={[0,1,0]}>
       <mesh
         castShadow
         receiveShadow
