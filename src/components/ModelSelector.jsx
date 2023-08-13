@@ -32,7 +32,7 @@ const ModelSelector = ({modelIndex}) => {
   
   
   return (<>
-     {modelArray[modelIndex]}
+     {modelArray[25]}
     </>
   )
 }

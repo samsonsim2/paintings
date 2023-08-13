@@ -195,15 +195,19 @@ export default function App() {
   return (
     <>
     <Box sx={{ position:"relative",width:"100vw",height:"100vh"  }}>
+    <Box  sx={{position:"absolute",top:30, width:"100%", display:"flex",justifyContent:"center",zIndex:"10000000"  }}>
+    <h1 style={{color:"white"}}>Enraptured</h1> 
+    </Box>
       <Box  sx={{position:"absolute",bottom:30, width:"100%", display:"flex",justifyContent:"center",zIndex:"10000000"  }}>
     <Button  variant="contained" onClick={()=>{downloadImage()}}>donwload</Button>
     </Box>
       <Box  ref={divRef} sx={{width:"100vw",top:0,display:"flex",justifyContent:"center"}}>
       
+      
    <Box sx={{position:"absolute",bottom:"50%",display:"flex",justifyContent:"space-between" ,zIndex:"100",width:"100%",padding:"50px"}}>
    
    <Button  onClick={()=>{decrement()}} sx={{height:"40px"}}><ArrowLeftIcon sx={{fontSize:"100px",color:"white"}}/></Button>
-   
+
    <Button  onClick={()=>{increment()}} sx={{height:"40px"}}><ArrowRightIcon sx={{fontSize:"100px",color:"white"}} /></Button>
 
    </Box>

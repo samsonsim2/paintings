@@ -46,6 +46,7 @@ const Loading = () => {
 
        <Box sx={{width:"100vw",height:"100vh",position:"relative",display:"flex",justifyContent:"center"}}>
     <Stack spacing={2} sx={{pointerEvents:"none", zIndex:10000,  position:"absolute", top:0,bottom:0,left:0,right:0,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+     <h1>Enraptured</h1> 
     <Typography color="white"> Loading</Typography> 
     <CircularProgress sx={{color:"white"}} /> 
     <Typography color="white" sx={{fontSize:"6px",fontWeight:"light"}}> [This might take awhile]</Typography> 
