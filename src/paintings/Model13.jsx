@@ -37,25 +37,25 @@ export function Model13(props) {
         receiveShadow
         geometry={nodes.brush_Fire_g0_b0.geometry}
         material={materials.brush_Fire}
-      ><meshPhongMaterial map={brushFireMap}  emissive={"purple"}  color={"purple"} emissiveIntensity={50}   transparent={true} opacity={0.2}/></mesh>
+      ><meshPhongMaterial depthWrite={false} map={brushFireMap}  emissive={"purple"}  color={"purple"} emissiveIntensity={50}   transparent={true} opacity={0.2}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Streamers_g0_b0.geometry}
         material={materials.brush_Streamers}
-      ><meshBasicMaterial map={brushStreamersMap}     color={"green"}    transparent={true} opacity={0.3}/></mesh>
+      ><meshBasicMaterial depthWrite={false} map={brushStreamersMap}     color={"green"}    transparent={true} opacity={0.3}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Disco_g0_b0.geometry}
         material={materials.brush_Disco}
-       ><meshBasicMaterial  map={brushDiscoMap}    color={"white"}    transparent={true} opacity={1}/></mesh>
+       ><meshBasicMaterial  depthWrite={false} map={brushDiscoMap}    color={"white"}    transparent={true} opacity={1}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Smoke_g0_b0.geometry}
         material={materials.brush_Smoke}
-       ><meshPhongMaterial map={brushSmokeMap}  emissive={"blue"}  color={"blue"} emissiveIntensity={20}   transparent={true} opacity={0.2}/></mesh>
+       ><meshPhongMaterial depthWrite={false} map={brushSmokeMap}  emissive={"blue"}  color={"blue"} emissiveIntensity={20}   transparent={true} opacity={0.2}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow
@@ -79,13 +79,13 @@ export function Model13(props) {
         receiveShadow
         geometry={nodes.brush_Spikes_g0_b0.geometry}
         material={materials.brush_Spikes}
-       ><meshBasicMaterial   color={"green"}  transparent={true} opacity={0.3}/></mesh>
+       ><meshBasicMaterial depthWrite={false}  color={"green"}  transparent={true} opacity={0.3}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_WetPaint_g0_b0.geometry}
         material={materials.brush_WetPaint}
-      ><meshPhongMaterial map={brushWetPaintMap}  emissive={"green"}  color={"green"} emissiveIntensity={20}   transparent={true} opacity={0.3}/></mesh>
+      ><meshPhongMaterial depthWrite={false} map={brushWetPaintMap}  emissive={"green"}  color={"green"} emissiveIntensity={20}   transparent={true} opacity={0.3}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow

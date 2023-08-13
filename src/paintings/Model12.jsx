@@ -40,25 +40,25 @@ export function Model12(props) {
         receiveShadow
         geometry={nodes.brush_Streamers_g0_b0.geometry}
         material={materials.brush_Streamers}
-       ><meshBasicMaterial  color={"white"}  map={brushStreamersMap}  transparent={true}/></mesh>
+       ><meshBasicMaterial depthWrite={false} color={"white"}  map={brushStreamersMap}  transparent={true}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Smoke_g0_b0.geometry}
         material={materials.brush_Smoke}
-       ><meshPhongMaterial map={brushSmokeMap}  emissive={"green"}  color={"green"} emissiveIntensity={20}   transparent={true} opacity={0.3}/></mesh>
+       ><meshPhongMaterial depthWrite={false} map={brushSmokeMap}  emissive={"green"}  color={"green"} emissiveIntensity={20}   transparent={true} opacity={0.3}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_WetPaint_g0_b0.geometry}
         material={materials.brush_WetPaint}
-      ><meshPhongMaterial map={brushWetPaintMap}  emissive={"green"}  color={"green"} emissiveIntensity={9}   transparent={true} opacity={0.3}/></mesh>
+      ><meshPhongMaterial depthWrite={false} map={brushWetPaintMap}  emissive={"green"}  color={"green"} emissiveIntensity={9}   transparent={true} opacity={0.3}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Hypercolor_g0_b0.geometry}
         material={materials.brush_Hypercolor}
-       ><meshPhongMaterial map={brushWaveFormMap}  emissive={"white"}  color={"white"} emissiveIntensity={5}   transparent={true} opacity={0.3}/></mesh>
+       ><meshPhongMaterial depthWrite={false} map={brushWaveFormMap}  emissive={"white"}  color={"white"} emissiveIntensity={5}   transparent={true} opacity={0.3}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow

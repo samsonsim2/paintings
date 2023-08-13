@@ -32,25 +32,25 @@ useFrame(({ clock }) => {
         receiveShadow
         geometry={nodes.brush_ChromaticWave_g0_b0.geometry}
         material={materials.brush_ChromaticWave}
-       ><meshPhongMaterial    emissive={"red"}  color={"red"} emissiveIntensity={4}   transparent={true} opacity={0.3}/></mesh>
+       ><meshPhongMaterial   depthWrite={false} emissive={"red"}  color={"red"} emissiveIntensity={4}   transparent={true} opacity={0.3}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_DiamondHull_g0_b0.geometry}
         material={materials.brush_DiamondHull}
-      ><meshPhongMaterial map={brushDiamondHullMap}   emissive={"#C5E5FF"}  color={"#C5E5FF"} emissiveIntensity={1}   transparent={true} opacity={0.7}/></mesh>
+      ><meshPhongMaterial depthWrite={false} map={brushDiamondHullMap}   emissive={"#C5E5FF"}  color={"#C5E5FF"} emissiveIntensity={1}   transparent={true} opacity={0.7}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Spikes_g0_b0.geometry}
         material={materials.brush_Spikes}
-       ><meshPhongMaterial  emissive={"yellow"}  color={"yellow"} emissiveIntensity={1}   transparent={true} opacity={0.7}/></mesh>
+       ><meshPhongMaterial  depthWrite={false} emissive={"yellow"}  color={"yellow"} emissiveIntensity={1}   transparent={true} opacity={0.7}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Streamers_g0_b0.geometry}
         material={materials.brush_Streamers}
-       ><meshPhongMaterial map={brushStreamersMap}   emissive={"yellow"}  color={"yellow"} emissiveIntensity={1}   transparent={true} opacity={0.7}/></mesh>
+       ><meshPhongMaterial depthWrite={false} map={brushStreamersMap}   emissive={"yellow"}  color={"yellow"} emissiveIntensity={1}   transparent={true} opacity={0.7}/></mesh>
     </group>
   );
 }

@@ -39,7 +39,7 @@ export function Model17(props) {
         receiveShadow
         geometry={nodes.brush_Fire_g0_b0.geometry}
         material={materials.brush_Fire}
-       ><meshBasicMaterial color="grey" map={brushFireMap}/></mesh>
+       ><meshBasicMaterial depthWrite={false} color="grey" map={brushFireMap}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow
@@ -63,7 +63,7 @@ export function Model17(props) {
         receiveShadow
         geometry={nodes.brush_Disco_g0_b0.geometry}
         material={materials.brush_Disco}
-      ><meshPhongMaterial  emissive={"white"}  color={"white"} emissiveIntensity={3}   map={brushSpikesSmallMap}   transparent={true} opacity={0.4}/></mesh>  
+      ><meshPhongMaterial depthWrite={false} emissive={"white"}  color={"white"} emissiveIntensity={3}   map={brushSpikesSmallMap}   transparent={true} opacity={0.4}/></mesh>  
       <mesh
         castShadow
         receiveShadow
@@ -93,7 +93,7 @@ export function Model17(props) {
         receiveShadow
         geometry={nodes.brush_Rainbow_g0_b0.geometry}
         material={materials.brush_Rainbow}
-       ><meshPhongMaterial  emissive={"red"}  color={"red"} emissiveIntensity={1}   map={brushSpikesMap}   transparent={true}/></mesh>  
+       ><meshPhongMaterial depthWrite={false}  emissive={"red"}  color={"red"} emissiveIntensity={1}   map={brushSpikesMap}   transparent={true}/></mesh>  
     </group>
   );
 }

@@ -60,63 +60,63 @@ export function Model4(props) {
         receiveShadow
         geometry={nodes.brush_Ink_g0_b0.geometry}
         material={materials.brush_Ink}
-      ><meshBasicMaterial map={brushInkMap}   color={"#022B66"}   /></mesh>  
+      ><meshBasicMaterial map={brushInkMap}   color={"#022B66"}  depthWrite={false} /></mesh>  
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_DiamondHull_g0_b0.geometry}
         material={materials.brush_DiamondHull}
-      ><meshBasicMaterial map={brushDiamondHullMap}  color={"#C5FFFD"}  transparent={true} opacity={0.5}/></mesh>  
+      ><meshBasicMaterial depthWrite={false} map={brushDiamondHullMap}  color={"#C5FFFD"}  transparent={true} opacity={0.5}/></mesh>  
        {/*Body*/}
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_DiamondHull_g0_b1.geometry}
         material={materials.brush_DiamondHull}
-        ><meshBasicMaterial map={brushDiamondHullMap}  color={"#94BED3"}  transparent={true} opacity={0.7}/></mesh>  
+        ><meshBasicMaterial depthWrite={false} map={brushDiamondHullMap}  color={"#94BED3"}  transparent={true} opacity={0.7}/></mesh>  
       {/*Head*/}
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_DiamondHull_g0_b2.geometry}
         material={materials.brush_DiamondHull}
-        ><meshBasicMaterial map={brushDiamondHullMap}  color={"#518EA8"}  transparent={true} opacity={0.7}/></mesh>  
+        ><meshBasicMaterial depthWrite={false} map={brushDiamondHullMap}  color={"#518EA8"}  transparent={true} opacity={0.7}/></mesh>  
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Disco_g0_b0.geometry}
         material={materials.brush_Disco}
-       ><meshBasicMaterial    color={"#6F6B91"}  transparent={true} opacity={0.7}/></mesh>  
+       ><meshBasicMaterial  depthWrite={false}  color={"#6F6B91"}  transparent={true} opacity={0.7}/></mesh>  
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Disco_g0_b1.geometry}
         material={materials.brush_Disco}
-        ><meshBasicMaterial   map={brushStreamersMap} color={"#6F6B91"}   /></mesh>  
+        ><meshBasicMaterial  depthWrite={false} map={brushStreamersMap} color={"#6F6B91"}   /></mesh>  
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Disco_g0_b2.geometry}
         material={materials.brush_Disco}
-        ><meshBasicMaterial   map={brushStreamersMap} color={"#6F6B91"}  transparent={true} opacity={0.7}/></mesh>  
+        ><meshBasicMaterial  depthWrite={false}  map={brushStreamersMap} color={"#6F6B91"}  transparent={true} opacity={0.7}/></mesh>  
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Disco_g0_b3.geometry}
         material={materials.brush_Disco}
-        ><meshBasicMaterial    map={brushSmokeMap} color={"#3A0A44"}  transparent={true} opacity={0.7}/></mesh>  
+        ><meshBasicMaterial   depthWrite={false}  map={brushSmokeMap} color={"#3A0A44"}  transparent={true} opacity={0.7}/></mesh>  
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_WigglyGraphite_g0_b0.geometry}
         material={materials.brush_WigglyGraphite}
-       ><meshBasicMaterial map={brushWigglyGraphiteMap}  color={"#red"}  transparent={true} opacity={0.7}/></mesh>  
+       ><meshBasicMaterial depthWrite={false} map={brushWigglyGraphiteMap}  color={"#red"}  transparent={true} opacity={0.7}/></mesh>  
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_DuctTape_g0_b0.geometry}
         material={materials.brush_DuctTape}
-       ><meshBasicMaterial map={brushDiamondHullMap}  color={"#ADD8E6"}  transparent={true} opacity={0.7}/></mesh>  
+       ><meshBasicMaterial depthWrite={false} map={brushDiamondHullMap}  color={"#ADD8E6"}  transparent={true} opacity={0.7}/></mesh>  
     </group>
   );
 }

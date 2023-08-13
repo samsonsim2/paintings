@@ -48,7 +48,7 @@ useFrame(({ clock }) => {
         receiveShadow
         geometry={nodes.brush_SoftHighlighter_g0_b0.geometry}
         material={materials.brush_SoftHighlighter}
-        ><meshPhongMaterial map={brushSoftHiglighterMap}  emissive={"green"}  color={"yellow"} emissiveIntensity={4}   transparent={true} opacity={0.7}/></mesh>
+        ><meshPhongMaterial depthWrite={false} map={brushSoftHiglighterMap}  emissive={"#DBFF06"}  color={"yellow"} emissiveIntensity={0.8}   transparent={true} opacity={0.7}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow
@@ -60,7 +60,7 @@ useFrame(({ clock }) => {
         receiveShadow
         geometry={nodes.brush_ThickPaint_g0_b0.geometry}
         material={materials.brush_ThickPaint}
-        ><meshPhongMaterial emissive={"yellow"}  emissiveIntensity={0.3} side={DoubleSide} map={brushThickPaintMap}  color={"#FFDD71"} transparent={true} opacity={1}/></mesh>
+        ><meshPhongMaterial depthWrite={false} emissive={"yellow"}  emissiveIntensity={0.3} side={DoubleSide} map={brushThickPaintMap}  color={"#FFDD71"} transparent={true} opacity={1}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow
@@ -72,7 +72,7 @@ useFrame(({ clock }) => {
         receiveShadow
         geometry={nodes.brush_Disco_g0_b0.geometry}
         material={materials.brush_Disco}
-      />
+      ><meshBasicMaterial color={"white"}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow
@@ -90,7 +90,7 @@ useFrame(({ clock }) => {
         receiveShadow
         geometry={nodes.brush_Electricity_g0_b0.geometry}
         material={materials.brush_Electricity}
-       > <meshBasicMaterial   color={"yellow"}  /></mesh>
+       > <meshBasicMaterial depthWrite={false}  color={"yellow"}  /></mesh>
     </group>
   );
 }

@@ -39,13 +39,13 @@ const { nodes, materials } = useGLTF("/Model1.glb");
         receiveShadow
         geometry={nodes.brush_HyperGrid_g0_b0.geometry}
         material={materials.brush_HyperGrid}
-      ><meshPhongMaterial   emissive={"#6AFF00"}  emissiveIntensity={3} color={"#6AFF00"}    map={brushHyperGridMap} transparent={true}/> </mesh>
+      ><meshPhongMaterial   emissive={"#6AFF00"}  emissiveIntensity={3} color={"#6AFF00"}    map={brushHyperGridMap} transparent={true} depthWrite={false}/> </mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Streamers_g0_b0.geometry}
         material={materials.brush_Streamers}
-       ><meshBasicMaterial  color={"#00E24B"} map={brushStreamersMap} transparent={true}/></mesh>
+       ><meshBasicMaterial  color={"#00E24B"} map={brushStreamersMap} transparent={true} depthWrite={false}/></mesh>
       {/*Arms*/}
       <mesh
         castShadow
@@ -53,7 +53,7 @@ const { nodes, materials } = useGLTF("/Model1.glb");
         geometry={nodes.brush_DiamondHull_g0_b0.geometry}
         material={materials.brush_DiamondHull}
          
-       ><meshPhongMaterial   emissive={"#E6D9FF"}  emissiveIntensity={0.3} color={"#E6D9FF"}    map={brushHyperGridMap} transparent={true}/> </mesh>
+       ><meshPhongMaterial   emissive={"#E6D9FF"}  emissiveIntensity={0.3} color={"#E6D9FF"}    map={brushHyperGridMap} transparent={true} depthWrite={false}/> </mesh>
       {/*Legs*/}
       <mesh
         castShadow
@@ -61,7 +61,7 @@ const { nodes, materials } = useGLTF("/Model1.glb");
         geometry={nodes.brush_DiamondHull_g0_b1.geometry}
         material={materials.brush_DiamondHull}
        
-      ><meshPhongMaterial   emissive={"#ADD8E6"}  emissiveIntensity={1} color={"#ADD8E6"}    map={brushHyperGridMap} transparent={true}/> </mesh>
+      ><meshPhongMaterial  depthWrite={false}  emissive={"#ADD8E6"}  emissiveIntensity={1} color={"#ADD8E6"}    map={brushHyperGridMap} transparent={true}/> </mesh>
       
       {/*Head*/}
       <mesh
@@ -69,7 +69,7 @@ const { nodes, materials } = useGLTF("/Model1.glb");
         receiveShadow
         geometry={nodes.brush_DiamondHull_g0_b2.geometry}
         material={materials.brush_DiamondHull}
-        ><meshPhongMaterial   emissive={"#E6D9FF"}  emissiveIntensity={0.3} color={"#E6D9FF"}    map={brushHyperGridMap} transparent={true}/> </mesh>
+        ><meshPhongMaterial depthWrite={false}  emissive={"#E6D9FF"}  emissiveIntensity={0.3} color={"#E6D9FF"}    map={brushHyperGridMap} transparent={true}/> </mesh>
       {/* <mesh
         castShadow
         receiveShadow
@@ -81,7 +81,7 @@ const { nodes, materials } = useGLTF("/Model1.glb");
         receiveShadow
         geometry={nodes.brush_Petal_g0_b0.geometry}
         material={materials.brush_Petal}
-        ><meshStandardMaterial color={"yellow"} /></mesh>
+        ><meshStandardMaterial color={"yellow"}  depthWrite={false}/></mesh>
          
       <mesh
         castShadow

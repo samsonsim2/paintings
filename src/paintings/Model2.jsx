@@ -42,34 +42,34 @@ useFrame(({ clock }) => {
         receiveShadow
         geometry={nodes.brush_DiamondHull_g0_b0.geometry}
         material={materials.brush_DiamondHull}
-        ><meshBasicMaterial map={brushDiamondHullMap} color={"red"}/></mesh>
+        ><meshBasicMaterial map={brushDiamondHullMap} color={"red"} depthWrite={false}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Comet_g0_b0.geometry}
         material={materials.brush_Comet}
-       ><meshBasicMaterial map={brushDiamondHullMap} color={"orange"}/></mesh>
+       ><meshBasicMaterial map={brushDiamondHullMap} color={"orange"} depthWrite={false}/></mesh>
         {/*Main yellow streaks*/}
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_SoftHighlighter_g0_b0.geometry}
         material={materials.brush_SoftHighlighter}
-        ><meshPhongMaterial map={brushSoftHiglighterMap}  emissive={"yellow"}  emissiveIntensity={1} color={"yellow"}  transparent={true} opacity={0.7}/></mesh>
+        ><meshPhongMaterial depthWrite={false} map={brushSoftHiglighterMap}  emissive={"yellow"}  emissiveIntensity={1} color={"yellow"}  transparent={true} opacity={0.7}/></mesh>
      {/*Main yellow streaks*/}
      <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Petal_g0_b0.geometry}
         material={materials.brush_Petal}
-       ><meshPhongMaterial  emissive={"yellow"}  emissiveIntensity={1} color={"yellow"} transparent={true} opacity={0.7}/></mesh>
+       ><meshPhongMaterial depthWrite={false} emissive={"yellow"}  emissiveIntensity={1} color={"yellow"} transparent={true} opacity={0.7}/></mesh>
       {/*Orange streaks*/}
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Smoke_g0_b0.geometry}
         material={materials.brush_Smoke}
-        ><meshBasicMaterial side={DoubleSide} map={brushSmokeMap} color={"#F89207"}  transparent={true}/></mesh>
+        ><meshBasicMaterial depthWrite={false} side={DoubleSide} map={brushSmokeMap} color={"#F89207"}  transparent={true}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow

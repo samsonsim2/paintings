@@ -38,7 +38,7 @@ export function Model15(props) {
         receiveShadow
         geometry={nodes.brush_Fire_g0_b0.geometry}
         material={materials.brush_Fire}
-       ><meshPhongMaterial map={brushFireMap}  emissive={"red"}  color={"red"} emissiveIntensity={1}   transparent={true} opacity={0.2}/></mesh>
+       ><meshPhongMaterial depthWrite={false} map={brushFireMap}  emissive={"red"}  color={"red"} emissiveIntensity={1}   transparent={true} opacity={0.2}/></mesh>
       {/* <mesh
         castShadow
         receiveShadow
@@ -50,25 +50,25 @@ export function Model15(props) {
         receiveShadow
         geometry={nodes.brush_Light_g0_b0.geometry}
         material={materials.brush_Light}
-       ><meshPhongMaterial map={brushLightMap}  emissive={"#92D8FF"}  color={"white"} emissiveIntensity={10}   transparent={true} opacity={0.2}/></mesh>
+       ><meshPhongMaterial depthWrite={false} map={brushLightMap}  emissive={"#92D8FF"}  color={"white"} emissiveIntensity={10}   transparent={true} opacity={0.2}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Embers_g0_b0.geometry}
         material={materials.brush_Embers}
-       ><meshBasicMaterial map={brushLightMap}   color={"purple"}  transparent={true} opacity={0.2}/></mesh>
+       ><meshBasicMaterial depthWrite={false} map={brushLightMap}   color={"purple"}  transparent={true} opacity={0.2}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_WigglyGraphite_g0_b0.geometry}
         material={materials.brush_WigglyGraphite}
-      ><meshBasicMaterial map={brushWigglyGraphiteMap}   color={"#7A0E00"}   transparent={true} opacity={1} /></mesh>
+      ><meshBasicMaterial depthWrite={false} map={brushWigglyGraphiteMap}   color={"#7A0E00"}   transparent={true} opacity={1} /></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Smoke_g0_b0.geometry}
         material={materials.brush_Smoke}
-       ><meshPhongMaterial map={brushSmokeMap} side={DoubleSide} emissive={"#92D8FF"}  color={"white"} emissiveIntensity={15}   transparent={true} opacity={0.3}/></mesh>
+       ><meshPhongMaterial depthWrite={false} map={brushSmokeMap} side={DoubleSide} emissive={"#92D8FF"}  color={"white"} emissiveIntensity={15}   transparent={true} opacity={0.3}/></mesh>
       <mesh
         castShadow
         receiveShadow
@@ -80,19 +80,19 @@ export function Model15(props) {
         receiveShadow
         geometry={nodes.brush_WetPaint_g0_b0.geometry}
         material={materials.brush_WetPaint}
-       ><meshBasicMaterial   color={"red"}/></mesh>
+       ><meshBasicMaterial depthWrite={false}  color={"red"}/></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Waveform_g0_b0.geometry}
         material={materials.brush_Waveform}
-       ><meshBasicMaterial map={brushWaveFormMap} color={"red"}/></mesh>  
+       ><meshBasicMaterial depthWrite={false} map={brushWaveFormMap} color={"red"}/></mesh>  
      <mesh
         castShadow
         receiveShadow
         geometry={nodes.brush_Rainbow_g0_b0.geometry}
         material={materials.brush_Rainbow}
-       ><meshBasicMaterial map={brushWetPaintMap} color="red"/></mesh>
+       ><meshBasicMaterial depthWrite={false} map={brushWetPaintMap} color="red"/></mesh>
     </group>
   );
 }
