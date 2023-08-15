@@ -36,8 +36,14 @@ export function Model27(props) {
     const brushElectricityMap = useTexture("/Textures/Brush_Electricity.png");
     const brushSplatterMap = useTexture("/Textures/Brush_Splatter.png");
   const { nodes, materials } = useGLTF("/Model27.glb");
+  const myMesh = React.useRef()
+  useFrame(({ clock }) => {
+    myMesh.current.rotation.y = clock.getElapsedTime()/5
+  })
+
+  
   return (
-    <group {...props} dispose={null} scale={2} position={[0,1,0]}>
+    <group  ref={myMesh} {...props} dispose={null} scale={2} position={[0,1,0]}>
       <mesh
         castShadow
         receiveShadow
