@@ -25,14 +25,15 @@ import { Model23} from '../paintings/Model23'
 import { Model24} from '../paintings/Model24'
 import { Model25} from '../paintings/Model25'
 import { Model26} from '../paintings/Model26'
+import { Model27} from '../paintings/Model27'
 const ModelSelector = ({modelIndex}) => {
     const modelArray = [
     <Model1/>,<Model2/>,<Model3/>,<Model4/>,<Model5/>,<Model6/>,<Model7/>,<Model8/>,<Model9/>,<Model10/>,
-    <Model11/>,<Model12/>,<Model13/>,<Model14/>,<Model15/>,<Model16/>,<Model17/>,<Model18/>,<Model19/>,<Model20/>,<Model21/>,<Model22/>,<Model23/>,<Model24/>,<Model25/>,<Model26/>]
+    <Model11/>,<Model12/>,<Model13/>,<Model14/>,<Model15/>,<Model16/>,<Model17/>,<Model18/>,<Model19/>,<Model20/>,<Model21/>,<Model22/>,<Model23/>,<Model24/>,<Model25/>,<Model26/>,<Model27/>]
   
   
   return (<>
-     {modelArray[modelIndex]}
+     {modelArray[26]}
     </>
   )
 }
