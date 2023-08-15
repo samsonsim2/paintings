@@ -133,7 +133,7 @@ export default function App() {
 
     const increment=()=>{
        
-      if(modelIndex < 25){
+      if(modelIndex < 26){
       setModelIndex(modelIndex +1 )
       }
       else{
@@ -148,7 +148,7 @@ export default function App() {
     setModelIndex(modelIndex - 1 )
     }
     else{
-      setModelIndex(25)
+      setModelIndex(26)
     }
      
 
