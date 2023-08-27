@@ -6,6 +6,7 @@ import Cube from "./Cube2";
 import ModelSelector from "./ModelSelector";
 import XrModels from "./XrModels";
 import { extend } from "@react-three/fiber";
+import * as THREE from "three";
 extend({ Canvas });
 const XrHitCube = () => {
   const reticleRef = useRef();
@@ -38,11 +39,22 @@ const XrHitCube = () => {
   return (
     <>
      
-      <OrbitControls />
-      <ambientLight />
+      
       {isPresenting &&
         cubes.map(({ position, id }) => {
-          return <ModelSelector modelIndex={0} key={id} position={position} />;
+          return   <Canvas
+          shadows
+          gl={{
+            antialias: true,
+            toneMapping: THREE.NoToneMapping,
+            preserveDrawingBuffer: true,
+          }}
+          linear
+          backgr
+          id="three-canvas-container"
+          style={{ background: "black" }}>
+           < ModelSelector modelIndex={1} key={id}  />;
+          </Canvas>
         })}
       {isPresenting && (
         <Interactive onSelect={placeCube}>
@@ -53,7 +65,7 @@ const XrHitCube = () => {
         </Interactive>
       )}
 
-      {!isPresenting && <ModelSelector modelIndex={1}/>}
+      {!isPresenting &&   <ModelSelector modelIndex={1}/>}
       
     </>
   );
