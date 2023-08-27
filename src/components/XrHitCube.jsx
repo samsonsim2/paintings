@@ -52,7 +52,7 @@ const XrHitCube = () => {
           linear
           backgr
           id="three-canvas-container"
-          style={{ background: "black" }}>
+          style={{ background: "transparent" }}>
            < ModelSelector modelIndex={1} key={id}  />;
           </Canvas>
         })}
