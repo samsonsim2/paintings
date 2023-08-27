@@ -14,6 +14,7 @@ import {
   OrthographicCamera,
 } from '@react-three/drei'
 import * as THREE from 'three'
+import ModelSelector from "./components/ModelSelector";
 
 import { Suspense, useState, useRef } from 'react'
  
@@ -25,6 +26,8 @@ import { Models } from './components/Models';
 import { useControls } from 'leva'
 import { ARButton, XR } from '@react-three/xr';
 import Cube from './components/Cube2';
+ 
+ 
  
 
  
@@ -46,7 +49,7 @@ const PaintingsXR= () => {
         }}/>
       <Canvas>
         <XR>
-          <Cube />
+         <ModelSelector modelIndex={1}/>
         </XR>
       </Canvas>
         

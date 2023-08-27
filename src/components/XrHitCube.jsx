@@ -1,9 +1,12 @@
 import { OrbitControls } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { Interactive, useHitTest, useXR } from "@react-three/xr";
 import { useRef, useState } from "react";
 import Cube from "./Cube2";
-
+import ModelSelector from "./ModelSelector";
+import XrModels from "./XrModels";
+import { extend } from "@react-three/fiber";
+extend({ Canvas });
 const XrHitCube = () => {
   const reticleRef = useRef();
   const [cubes, setCubes] = useState([]);
@@ -34,11 +37,12 @@ const XrHitCube = () => {
 
   return (
     <>
+     
       <OrbitControls />
       <ambientLight />
       {isPresenting &&
         cubes.map(({ position, id }) => {
-          return <Cube key={id} position={position} />;
+          return <ModelSelector modelIndex={0} key={id} position={position} />;
         })}
       {isPresenting && (
         <Interactive onSelect={placeCube}>
@@ -49,7 +53,8 @@ const XrHitCube = () => {
         </Interactive>
       )}
 
-      {!isPresenting && <Cube />}
+      {!isPresenting && <ModelSelector modelIndex={1}/>}
+      
     </>
   );
 };
