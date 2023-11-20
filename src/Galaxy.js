@@ -113,9 +113,7 @@ export default function App() {
   );
   extend({ ColorShiftMaterial });
   const rayRef = useRef(null);
-  const { nodes, materials } = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/dragon/model.gltf"
-  );
+   
   const shader = {
     uniforms: {},
     vertexShader,
@@ -178,6 +176,7 @@ export default function App() {
 
   return (
     <>
+     
       <Box sx={{ position: "relative", width: "100vw", height: "100vh" }}>
         <Box
           sx={{
